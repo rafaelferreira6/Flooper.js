@@ -10,5 +10,12 @@ html
     link(rel="shortcut icon", href="images/favicon.ico")
     link(rel="stylesheet", href="css/index.css")
   body
-    include _flooper
+    div#app.o-skeleton
+      main.o-skeleton__body
+        // content here
+        include _flooper_beatles
+        //include _flooper_demo
+      footer.o-skeleton__feet.c-footer
+        small Made with ➿ and ❤️ by
+          a(href="https://whitesmith.co") Whitesmith™
     script(type="text/javascript", src="js/app.js")

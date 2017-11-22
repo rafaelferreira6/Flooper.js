@@ -237,7 +237,7 @@ gulp.task("watch", (cb) => {
 
       // WEBPACK HMR did the job with browser sync
       $.watch(`${paths.site.src}/js/**/*`, () => {
-        gulp.start("webpack:site");
+        runSequence("webpack:lib", "webpack:site");
       });
 
       $.watch(`${paths.lib.src}/**/*`, () => {

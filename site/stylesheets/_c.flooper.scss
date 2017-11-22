@@ -1,20 +1,10 @@
+$default-block-size: 136px;
 .c-flooper {
   display: flex;
   flex-direction: column;
-  padding: 40px 0;
   overflow: hidden;
-  padding: 2rem 0;
-  background-image: linear-gradient(rgba(#ececec,.5), rgba(#ececec,.5)), url("../assets/background.jpeg");
   flex-grow: 1;
-  background-size: cover;
-  background-position: 50% 75%;
-  background-repeat: no-repeat;
   justify-content: center;
-
-  @media screen and (min-width:1024px) {
-    width: 50%;
-    margin-left: 25%;
-  }
 }
 
 .c-flooper__row {
@@ -25,42 +15,31 @@
   margin-bottom: 30px;
 }
 
-.c-flooper__block {
-  position: relative;
-  margin: 0 15px;
-  padding: 0 15px;
-  flex: 0 0 auto;
-  width: 136px;
-  height: 272px;
-  border-radius: 68px;
-  display: flex;
-  background: white;
-  align-items: center;
-  justify-content: center;
-  animation: float 3s ease-in-out infinite;
-  background: transparent;
+  .c-flooper__block {
+    position: relative;
+    margin: 0 15px;
+    padding: 0 15px;
+    flex: 0 0 auto;
+    width: $default-block-size;
+    height: $default-block-size;
+    border-radius: $default-block-size;
+    display: flex;
+    background: white;
+    align-items: center;
+    justify-content: center;
 
-  .paused & {
-    animation-play-state: paused;
+    // double sizing
+    &--2x { width: $default-block-size*2; }
   }
 
-  &:hover{
-    background-color: rgba(#222,.5);
-    color: white;
-  }
-}
-.c-flooper__img {
-  max-height: 100%;
-  width: auto;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.c-flooper__block--2x {
-  width: 304px;
-}
+    .c-flooper__img {
+      max-height: 100%;
+      width: auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
 
 .c-flooper__controls{
   margin-top: 5em;
@@ -68,6 +47,39 @@
   text-align: center;
 }
 
+
+
+/*
+ * BEATLES DEMO
+ *------------------------------------------*/
+.c-flooper--beatles {
+  background-image: linear-gradient(rgba(#ececec,.5), rgba(#ececec,.5)), url("../assets/background.jpeg");
+  background-size: cover;
+  background-position: 50% 75%;
+  background-repeat: no-repeat;
+  padding: 2rem 0;
+
+  @media screen and (min-width:1024px) {
+    width: ($default-block-size*2)*4; // double size x 4 beatles
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .c-flooper__block{
+    background: transparent;
+    height: 272px;
+    animation: float 3s ease-in-out infinite;
+
+    .paused & {
+      animation-play-state: paused;
+    }
+
+    &:hover{
+      background-color: rgba(#222,.5);
+      color: white;
+    }
+  }
+}
 
 @keyframes float {
 	0% {
@@ -80,3 +92,16 @@
 		transform: translateY(0px);
 	}
 }
+
+
+/*
+ * DEFAULT DEMO
+ *------------------------------------------*/
+
+ .c-flooper--demo{
+  background: #ececec;
+
+  .c-flooper__block{
+    background: white;
+  }
+ }
