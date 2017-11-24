@@ -1,6 +1,20 @@
 import {consoleColophon} from './consoleColophon';
-import {toggleAnimation} from './utils';
-import beatlesDemo from './beatlesDemo';
+import {
+  initialiseDemoInstances,
+  beatlesDemo
+} from './demos.js';
+import { Player } from './Player.js';
 
 consoleColophon();
-beatlesDemo();
+
+// INIT
+document.addEventListener('DOMContentLoaded', function(){
+  initialiseDemoInstances();
+  Player();
+  beatlesDemo();
+}, false);
+
+
+
+
+

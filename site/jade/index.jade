@@ -12,9 +12,14 @@ html
   body
     div#app.o-skeleton
       main.o-skeleton__body
+        include _player
         // content here
-        include _flooper_beatles
-        //include _flooper_demo
+        header
+          h1 Flooper.js Demo
+        section.o-section
+          include _flooper_beatles
+        section
+          include _flooper_demo
       footer.o-skeleton__feet.c-footer
         small Made with ➿ and ❤️ by
           a(href="https://whitesmith.co") Whitesmith™

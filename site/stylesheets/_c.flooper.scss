@@ -1,4 +1,10 @@
 $default-block-size: 136px;
+.c-flooper-wrap{
+  position: relative;
+  display: inline-flex;
+  margin: 0 auto;
+}
+
 .c-flooper {
   display: flex;
   flex-direction: column;
@@ -60,14 +66,16 @@ $default-block-size: 136px;
   padding: 2rem 0;
 
   @media screen and (min-width:1024px) {
-    width: ($default-block-size*2)*4; // double size x 4 beatles
+    width: (($default-block-size)*3.5); // double size x 4-0.5 beatles
+    height: (($default-block-size)*3.5);
     margin: 0 auto;
     max-width: 100%;
   }
 
   .c-flooper__block{
     background: transparent;
-    height: 272px;
+    width: $default-block-size;
+    height: $default-block-size*1.5;
     animation: float 3s ease-in-out infinite;
 
     .paused & {
@@ -78,6 +86,15 @@ $default-block-size: 136px;
       background-color: rgba(#222,.5);
       color: white;
     }
+  }
+
+  // cover spine
+  .c-flooper__controls{
+
+    height: 100%;
+    width: 56px;
+    background: white;
+    left: 0px;
   }
 }
 
