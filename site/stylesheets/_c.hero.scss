@@ -1,0 +1,15 @@
+.c-hero{
+  display: flex;
+  height: 160px;
+  background: #222;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.c-hero__title{
+  font-size: 2rem;
+  margin-top:0;
+}

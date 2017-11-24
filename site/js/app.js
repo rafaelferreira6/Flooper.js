@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
   initialiseDemoInstances();
   Player();
   beatlesDemo();
+
 }, false);
 
 

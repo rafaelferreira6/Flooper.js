@@ -295,6 +295,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'getState',
 	    value: function getState() {
 	      return {
+	        initialised: this.initialised,
 	        paused: this.paused,
 	        slowmotion: this.slowmotion
 	      };

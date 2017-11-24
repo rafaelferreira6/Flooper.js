@@ -13,9 +13,12 @@ html
     div#app.o-skeleton
       main.o-skeleton__body
         include _player
-        // content here
-        header
-          h1 Flooper.js Demo
+        header.c-hero
+          include _github_ribbon
+          h1.c-hero__title Flooper.js Demo
+          div.c-button-group
+            a.c-button.c-button--ghost Documentation
+            a.c-button.c-button--ghost Download
         section.o-section
           include _flooper_beatles
         section
