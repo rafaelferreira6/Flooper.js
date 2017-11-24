@@ -186,7 +186,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.addEvents = this.addEvents.bind(this);
 	
 	    // Flags
-	    this.paused = false;
+	    this.paused = true;
 	    this.slowmotion = false;
 	    this.initialised = false;
 	
@@ -198,6 +198,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _createClass(Flooper, [{
 	    key: 'init',
 	    value: function init() {
+	      this.paused = false;
 	      this.initialised = true;
 	      this.addEvents();
 	      this.start();

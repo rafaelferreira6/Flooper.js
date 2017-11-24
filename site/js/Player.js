@@ -153,16 +153,15 @@ export function Player(){
 
   function getRoomForPlayer(){
     let h = playerSelector.getBoundingClientRect().height;
-    root.style.paddingTop = h + 'px';
+    root.style.paddingBottom = h + 'px';
   }
 
   function init(){
     getRoomForPlayer();
     buildSelectbox();
-
+    attachEvents();
     selectbox.dispatchEvent(new Event('change'));
     handleFlooperState();
-    attachEvents();
   }
 
   init();
